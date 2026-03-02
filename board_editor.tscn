@@ -31,21 +31,6 @@ environment = SubResource("Environment_05d80")
 
 [node name="Note" parent="Notes3D" unique_id=1607266868 instance=ExtResource("5_xsqpg")]
 
-[node name="Note2" parent="Notes3D" unique_id=742877507 instance=ExtResource("5_xsqpg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.697781, 6.333786, 0)
-
-[node name="Note3" parent="Notes3D" unique_id=1887594865 instance=ExtResource("5_xsqpg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.967804, 10.175601, 0)
-
-[node name="Note4" parent="Notes3D" unique_id=797968424 instance=ExtResource("5_xsqpg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.066273, -2.1989279, 0)
-
-[node name="Note5" parent="Notes3D" unique_id=1338919973 instance=ExtResource("5_xsqpg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.169214, -14.203683, 0)
-
-[node name="Note6" parent="Notes3D" unique_id=726889435 instance=ExtResource("5_xsqpg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.881636, -4.8803387, 0)
-
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1641776052]
 transform = Transform3D(-0.4572939, 0.6109379, -0.64624876, -0.834591, -0.043839604, 0.54912287, 0.30714884, 0.79046386, 0.52993095, -77.284996, 65.66969, 80.13413)
 light_energy = 1.7
