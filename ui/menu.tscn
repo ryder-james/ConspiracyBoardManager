@@ -4,6 +4,8 @@
 [ext_resource type="Script" uid="uid://df8ogcxpxg7fs" path="res://ui/menu.gd" id="1_udkah"]
 [ext_resource type="Resource" uid="uid://b37ga2hs84pes" path="res://preferences/data/zoom_speed.tres" id="3_4c782"]
 [ext_resource type="Resource" uid="uid://ktruji2j4oh6" path="res://preferences/data/pan_speed.tres" id="4_2ot4n"]
+[ext_resource type="PackedScene" uid="uid://bm2neqnn5m0jm" path="res://ui/pref_toggle.tscn" id="5_fcydj"]
+[ext_resource type="Resource" uid="uid://bruqbaeawk30e" path="res://preferences/data/messy_notes.tres" id="6_jbsda"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2ot4n"]
 content_margin_left = 0.0
@@ -62,6 +64,11 @@ layout_mode = 2
 _preference = ExtResource("4_2ot4n")
 _range = Vector2(0.5, 5)
 _step = 0.1
+
+[node name="MessyNotes" parent="Preferences/MarginContainer/VBoxContainer" unique_id=1817227288 instance=ExtResource("5_fcydj")]
+layout_mode = 2
+tooltip_text = "When enabled, notes will randomly have a small rotation applied to them. Disable for a cleaner, more organized look."
+_preference = ExtResource("6_jbsda")
 
 [node name="PrefCloseButton" type="Button" parent="Preferences/MarginContainer/VBoxContainer" unique_id=8081318]
 unique_name_in_owner = true
