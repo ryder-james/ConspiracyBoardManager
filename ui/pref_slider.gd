@@ -14,7 +14,7 @@ extends HBoxContainer
 func _ready() -> void:
 	_update_controls()
 	
-	_slider.value = Settings.get_preff(_preference.key, _preference.default_value)
+	_slider.value = Settings.get_preff(_preference)
 	_spinner.value = _slider.value
 	
 	_slider.value_changed.connect(_on_slider_value_changed)
@@ -53,9 +53,9 @@ func _update_controls() -> void:
 
 func _on_slider_value_changed(new_value: float) -> void:
 	_spinner.value = new_value
-	Settings.set_preff(_preference.key, new_value)
+	Settings.set_preff(_preference, new_value)
 
 
 func _on_spinner_value_changed(new_value: float) -> void:
 	_slider.value = new_value
-	Settings.set_preff(_preference.key, new_value)
+	Settings.set_preff(_preference, new_value)

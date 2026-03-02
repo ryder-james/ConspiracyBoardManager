@@ -2,7 +2,9 @@
 
 [ext_resource type="PackedScene" uid="uid://b7tlwtl0whwxa" path="res://corkboard/corkboard.tscn" id="1_05d80"]
 [ext_resource type="Script" uid="uid://baphib3msylmd" path="res://ui/pan_camera.gd" id="2_05d80"]
+[ext_resource type="Resource" uid="uid://ktruji2j4oh6" path="res://preferences/data/pan_speed.tres" id="3_281qn"]
 [ext_resource type="PackedScene" uid="uid://dtybedmm2apqq" path="res://ui/menu.tscn" id="3_kvqg4"]
+[ext_resource type="Resource" uid="uid://b37ga2hs84pes" path="res://preferences/data/zoom_speed.tres" id="4_xsqpg"]
 
 [sub_resource type="Environment" id="Environment_05d80"]
 background_mode = 1
@@ -17,6 +19,8 @@ anchor = NodePath("../CameraAnchor")
 
 [node name="CameraAnchor" type="Node3D" parent="." unique_id=681827004]
 script = ExtResource("2_05d80")
+_pan_speed_pref = ExtResource("3_281qn")
+_zoom_speed_pref = ExtResource("4_xsqpg")
 
 [node name="Camera3D" type="Camera3D" parent="CameraAnchor" unique_id=2017705499]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 15)

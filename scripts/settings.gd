@@ -13,12 +13,12 @@ func _ready() -> void:
 
 
 #region Preference Shortcuts
-func set_preff(key: StringName, value: float, save_immediate := true) -> void:
-	_set_value(SECTION_PREFS, key, value, save_immediate)
+func set_preff(pref: FloatPref, value: float, save_immediate := true) -> void:
+	_set_value(SECTION_PREFS, pref.key, value, save_immediate)
 
 
-func get_preff(key: StringName, default := 0.0) -> float:
-	return _get_value(SECTION_PREFS, key, default)
+func get_preff(pref: FloatPref) -> float:
+	return _get_value(SECTION_PREFS, pref.key, pref.default_value)
 #endregion Preference Shortcuts
 
 

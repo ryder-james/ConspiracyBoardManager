@@ -5,6 +5,16 @@
 [ext_resource type="Resource" uid="uid://b37ga2hs84pes" path="res://preferences/data/zoom_speed.tres" id="3_4c782"]
 [ext_resource type="Resource" uid="uid://ktruji2j4oh6" path="res://preferences/data/pan_speed.tres" id="4_2ot4n"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2ot4n"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.1, 0.1, 0.1, 0.6)
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
 [node name="Menu" type="Control" unique_id=1414489040]
 layout_mode = 3
 anchors_preset = 15
@@ -58,18 +68,28 @@ unique_name_in_owner = true
 layout_mode = 2
 text = "Close"
 
-[node name="MenuBar" type="MenuBar" parent="." unique_id=128666099]
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=399340274]
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
 grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_2ot4n")
+
+[node name="MenuBar" type="MenuBar" parent="PanelContainer" unique_id=128666099]
+layout_mode = 2
 flat = true
 
-[node name="File" type="PopupMenu" parent="MenuBar" unique_id=1480066361]
+[node name="File" type="PopupMenu" parent="PanelContainer/MenuBar" unique_id=1480066361]
 unique_name_in_owner = true
 item_count = 1
 item_0/text = "Preferences"
 item_0/id = 0
 
-[node name="Edit" type="PopupMenu" parent="MenuBar" unique_id=1645707615]
+[node name="Edit" type="PopupMenu" parent="PanelContainer/MenuBar" unique_id=1645707615]
 unique_name_in_owner = true
+item_count = 2
+item_0/text = "New Note"
+item_0/id = 0
+item_1/text = "Delete Selected"
+item_1/id = 1
+item_1/disabled = true
