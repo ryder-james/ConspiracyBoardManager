@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://p8effvyfpmx3" path="res://ui/pref_slider.gd" id="1_awusw"]
 
-[node name="ZoomSpeed" type="HBoxContainer" unique_id=1674742686]
+[node name="PrefSlider" type="HBoxContainer" unique_id=1674742686]
 alignment = 1
 script = ExtResource("1_awusw")
 
