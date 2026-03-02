@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 Settings="*uid://bmno8054u1k22"
 Utility="*uid://j86vcm1dp2bh"
+Serializer="*uid://d0ebkf8jdimx5"
 
 [debug]
 
@@ -33,6 +34,10 @@ window/size/viewport_height=1080
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/label_font_auto_sizer/plugin.cfg")
+
+[global_group]
+
+Persist="Is considered in save data."
 
 [input]
 

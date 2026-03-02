@@ -16,3 +16,7 @@ func _on_file_popup_pressed(id: int) -> void:
 	match id:
 		0:
 			_preferences_menu.visible = true
+		1:
+			Serializer.save_case()
+		2:
+			Serializer.load_case()

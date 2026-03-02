@@ -13,6 +13,7 @@ var _move_delta: Vector3
 @onready var _visuals: Node3D = %Visuals
 
 
+#region Built-in Virtual Methods
 func _ready() -> void:
 	super._ready()
 	
@@ -23,6 +24,7 @@ func _ready() -> void:
 func _process(_delta: float) -> void:	
 	if _is_dragging:
 		global_position = _start_pos + _move_delta
+
 
 func _mouse_input_event(camera: Camera3D, event: InputEvent, 
 		event_position: Vector3, normal: Vector3, shape_idx: int) -> void:
@@ -44,6 +46,18 @@ func _mouse_input_event(camera: Camera3D, event: InputEvent,
 		var current_pos := Utility.screen_point_to_ray(true, 4)
 		_move_delta = current_pos - _start_mouse_pos
 		_move_delta.z = 0
+#endregion
+
+
+func save() -> Dictionary:
+	var save_dict := {
+		"filename": get_scene_file_path(),
+		"parent": get_parent().get_path(),
+		"pos_x": position.x,
+		"pos_y": position.y,
+	}
+	
+	return save_dict
 
 
 func _on_pref_changed(pref: Preference) -> void:

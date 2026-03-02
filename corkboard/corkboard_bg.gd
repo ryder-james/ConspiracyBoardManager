@@ -18,6 +18,9 @@ func _ready() -> void:
 
 
 func _process(_delta: float) -> void:
+	if anchor == null:
+		return
+	
 	var center_x: int = _round_to_nearest_multiple(
 			roundi(anchor.global_position.x), 
 			grid_size

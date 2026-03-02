@@ -88,9 +88,13 @@ flat = true
 
 [node name="File" type="PopupMenu" parent="PanelContainer/MenuBar" unique_id=1480066361]
 unique_name_in_owner = true
-item_count = 1
+item_count = 3
 item_0/text = "Preferences"
 item_0/id = 0
+item_1/text = "Save"
+item_1/id = 1
+item_2/text = "Load"
+item_2/id = 2
 
 [node name="Edit" type="PopupMenu" parent="PanelContainer/MenuBar" unique_id=1645707615]
 unique_name_in_owner = true
