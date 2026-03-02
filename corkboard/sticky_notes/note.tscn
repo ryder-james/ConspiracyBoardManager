@@ -4,7 +4,6 @@
 [ext_resource type="Texture2D" uid="uid://qeqj7j2ei8bg" path="res://corkboard/sticky_notes/note_icons/City.png" id="1_oeg03"]
 [ext_resource type="Resource" uid="uid://bruqbaeawk30e" path="res://preferences/data/messy_notes.tres" id="2_bpsue"]
 [ext_resource type="FontFile" uid="uid://dlbudvtnf8npq" path="res://themes/fonts/Fragmentcore.otf" id="2_de6el"]
-[ext_resource type="Script" uid="uid://dmehmkdm1tgif" path="res://corkboard/sticky_notes/note_control.gd" id="3_py6dq"]
 [ext_resource type="Script" uid="uid://bttgnk3bb2a8i" path="res://addons/label_font_auto_sizer/auto_size_label.gd" id="3_rg60n"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dythn"]
@@ -50,7 +49,6 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
-script = ExtResource("3_py6dq")
 
 [node name="PanelContainer" type="PanelContainer" parent="SubViewport/Control" unique_id=283595964]
 layout_mode = 0
