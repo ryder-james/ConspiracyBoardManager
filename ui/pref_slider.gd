@@ -12,6 +12,9 @@ extends HBoxContainer
 
 
 func _ready() -> void:
+	if not Engine.is_editor_hint():
+		return
+	
 	_update_controls()
 	
 	_slider.value = Settings.get_preff(_preference)
