@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="FloatPref" format=3 uid="uid://b37ga2hs84pes"]
+
+[ext_resource type="Script" uid="uid://cosig8556numa" path="res://preferences/float_pref.gd" id="1_4gm4t"]
+
+[resource]
+script = ExtResource("1_4gm4t")
+default_value = 5.0
+key = &"zoom_speed"
+metadata/_custom_type_script = "uid://cosig8556numa"

@@ -1,18 +1,42 @@
 extends Node
 
 
-const KEY_ZOOM_SPEED := &"zoomSpeed"
-const KEY_PAN_SPEED := &"panSpeed"
+const SETTINGS_FILE_PATH: String = "user://settings.cfg"
+const SECTION_PREFS := &"Preferences"
 
 
-var _setting_map: Dictionary[StringName, float]
+var _config := ConfigFile.new()
 
 
-func set_value(key: StringName, value: float) -> void:
-	_setting_map[key] = value
+func _ready() -> void:
+	_config.load(SETTINGS_FILE_PATH)
 
 
-func get_value(key: StringName, default_value: float = 0.0) -> float:
-	if _setting_map.has(key):
-		return _setting_map[key]
-	return default_value
+#region Preference Shortcuts
+func set_preff(key: StringName, value: float, save_immediate := true) -> void:
+	_set_value(SECTION_PREFS, key, value, save_immediate)
+
+
+func get_preff(key: StringName, default := 0.0) -> float:
+	return _get_value(SECTION_PREFS, key, default)
+#endregion Preference Shortcuts
+
+
+func setf(section: StringName, key: StringName, 
+		value: float, save_immediate := true) -> void:
+	_set_value(section, key, value, save_immediate)
+
+
+func getf(section: StringName, key: StringName, default := 0.0) -> float:
+	return _get_value(section, key, default)
+
+
+func _set_value(section: StringName, key: StringName, 
+		value: Variant, save_immediate: bool) -> void:
+	_config.set_value(section, key, value)
+	if save_immediate:
+		_config.save(SETTINGS_FILE_PATH)
+
+
+func _get_value(section: StringName, key: StringName, default: Variant) -> Variant:
+	return _config.get_value(section, key, default)

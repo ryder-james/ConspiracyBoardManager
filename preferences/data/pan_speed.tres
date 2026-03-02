@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="FloatPref" format=3 uid="uid://ktruji2j4oh6"]
+
+[ext_resource type="Script" uid="uid://cosig8556numa" path="res://preferences/float_pref.gd" id="1_c1kwa"]
+
+[resource]
+script = ExtResource("1_c1kwa")
+default_value = 1.0
+key = &"pan_speed"
+metadata/_custom_type_script = "uid://cosig8556numa"

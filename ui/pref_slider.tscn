@@ -1,25 +1,26 @@
 [gd_scene format=3 uid="uid://b0aku6crlhuf2"]
 
-[ext_resource type="Script" uid="uid://p8effvyfpmx3" path="res://setting_slider.gd" id="1_gyy53"]
+[ext_resource type="Script" uid="uid://p8effvyfpmx3" path="res://ui/pref_slider.gd" id="1_awusw"]
 
 [node name="ZoomSpeed" type="HBoxContainer" unique_id=1674742686]
 alignment = 1
-script = ExtResource("1_gyy53")
+script = ExtResource("1_awusw")
 
 [node name="Label" type="Label" parent="." unique_id=732566869]
 unique_name_in_owner = true
 layout_mode = 2
-text = "Label"
 
 [node name="Slider" type="HSlider" parent="." unique_id=175975312]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
+value = 100.0
 
 [node name="Spinner" type="SpinBox" parent="." unique_id=646953614]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 4
+value = 100.0
 update_on_text_changed = true
 select_all_on_focus = true

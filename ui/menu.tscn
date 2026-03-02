@@ -1,6 +1,9 @@
 [gd_scene format=3 uid="uid://dtybedmm2apqq"]
 
-[ext_resource type="PackedScene" uid="uid://b0aku6crlhuf2" path="res://ui/setting_slider.tscn" id="1_bwjgb"]
+[ext_resource type="PackedScene" uid="uid://b0aku6crlhuf2" path="res://ui/pref_slider.tscn" id="1_bwjgb"]
+[ext_resource type="Script" uid="uid://df8ogcxpxg7fs" path="res://ui/menu.gd" id="1_udkah"]
+[ext_resource type="Resource" uid="uid://b37ga2hs84pes" path="res://preferences/data/zoom_speed.tres" id="3_4c782"]
+[ext_resource type="Resource" uid="uid://ktruji2j4oh6" path="res://preferences/data/pan_speed.tres" id="4_2ot4n"]
 
 [node name="Menu" type="Control" unique_id=1414489040]
 layout_mode = 3
@@ -9,45 +12,64 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_udkah")
 
-[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1563944449]
+[node name="Preferences" type="PanelContainer" parent="." unique_id=1563944449]
+unique_name_in_owner = true
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -261.25
-offset_top = -260.25
-offset_right = 261.25
-offset_bottom = 260.25
+offset_left = -243.0
+offset_top = -70.5
+offset_right = 243.0
+offset_bottom = 70.5
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=1750148427]
+[node name="MarginContainer" type="MarginContainer" parent="Preferences" unique_id=1750148427]
 layout_mode = 2
 theme_override_constants/margin_left = 20
 theme_override_constants/margin_top = 20
 theme_override_constants/margin_right = 20
 theme_override_constants/margin_bottom = 20
 
-[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer" unique_id=632868920]
+[node name="VBoxContainer" type="VBoxContainer" parent="Preferences/MarginContainer" unique_id=632868920]
 layout_mode = 2
 
-[node name="ZoomSpeed" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1674742686 instance=ExtResource("1_bwjgb")]
+[node name="ZoomSpeed" parent="Preferences/MarginContainer/VBoxContainer" unique_id=1674742686 instance=ExtResource("1_bwjgb")]
 layout_mode = 2
-_setting_name = &"zoomSpeed"
+_preference = ExtResource("3_4c782")
 _range = Vector2(1, 10)
 _step = 0.1
-_default_value = 5.0
 
-[node name="PanSpeed" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1685779609 instance=ExtResource("1_bwjgb")]
+[node name="PanSpeed" parent="Preferences/MarginContainer/VBoxContainer" unique_id=1685779609 instance=ExtResource("1_bwjgb")]
 layout_mode = 2
-_setting_name = &"panSpeed"
-_range = Vector2(0.1, 3)
-_step = 0.01
-_default_value = 1.0
+_preference = ExtResource("4_2ot4n")
+_range = Vector2(0.5, 5)
+_step = 0.1
 
-[node name="Button" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=8081318]
+[node name="PrefCloseButton" type="Button" parent="Preferences/MarginContainer/VBoxContainer" unique_id=8081318]
+unique_name_in_owner = true
 layout_mode = 2
-text = "Back"
+text = "Close"
+
+[node name="MenuBar" type="MenuBar" parent="." unique_id=128666099]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
+flat = true
+
+[node name="File" type="PopupMenu" parent="MenuBar" unique_id=1480066361]
+unique_name_in_owner = true
+item_count = 1
+item_0/text = "Preferences"
+item_0/id = 0
+
+[node name="Edit" type="PopupMenu" parent="MenuBar" unique_id=1645707615]
+unique_name_in_owner = true
