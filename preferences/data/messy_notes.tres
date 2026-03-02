@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="BoolPref" format=3 uid="uid://bruqbaeawk30e"]
+
+[ext_resource type="Script" uid="uid://5scs2hs4rirg" path="res://preferences/bool_pref.gd" id="1_0mgj4"]
+
+[resource]
+script = ExtResource("1_0mgj4")
+default_value = true
+key = &"messy_notes"
+metadata/_custom_type_script = "uid://5scs2hs4rirg"

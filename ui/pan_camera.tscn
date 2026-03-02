@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://cdh7wbafofjlo"]
+
+[ext_resource type="Script" uid="uid://baphib3msylmd" path="res://ui/pan_camera.gd" id="1_r5kdg"]
+[ext_resource type="Resource" uid="uid://ktruji2j4oh6" path="res://preferences/data/pan_speed.tres" id="2_4ti05"]
+[ext_resource type="Resource" uid="uid://b37ga2hs84pes" path="res://preferences/data/zoom_speed.tres" id="3_lbnrg"]
+
+[sub_resource type="Environment" id="Environment_05d80"]
+background_mode = 1
+background_color = Color(0.77254903, 0.5764706, 0.36078432, 1)
+ambient_light_source = 1
+
+[node name="CameraAnchor" type="Node3D" unique_id=1732930500 groups=["Persist"]]
+script = ExtResource("1_r5kdg")
+_pan_speed_pref = ExtResource("2_4ti05")
+_zoom_speed_pref = ExtResource("3_lbnrg")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1190966834]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
+environment = SubResource("Environment_05d80")

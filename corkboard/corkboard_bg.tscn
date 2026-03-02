@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://b7tlwtl0whwxa"]
 
-[ext_resource type="Script" uid="uid://5w15aeklwif6" path="res://corkboard/corkboard.gd" id="1_c8hro"]
-[ext_resource type="PackedScene" uid="uid://0v71yhdp0sx1" path="res://corkboard/corkboard_panel.tscn" id="2_s7o52"]
+[ext_resource type="Script" uid="uid://5w15aeklwif6" path="res://corkboard/corkboard_bg.gd" id="1_c8hro"]
+[ext_resource type="PackedScene" uid="uid://0v71yhdp0sx1" path="res://corkboard/corkboard_bg_panel.tscn" id="2_s7o52"]
 
 [node name="Corkboard" type="Node3D" unique_id=621280219]
 script = ExtResource("1_c8hro")

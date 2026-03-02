@@ -15,6 +15,12 @@ var _is_panning := false
 var _camera_motion: Vector2
 
 @onready var _zoom := _default_zoom
+@onready var camera_3d: Camera3D = %Camera3D
+
+
+func _ready() -> void:
+	get_tree().get_first_node_in_group("Corkboard").anchor = self
+	camera_3d.make_current()
 
 
 func _process(delta: float) -> void:
@@ -44,3 +50,15 @@ func _unhandled_input(event: InputEvent) -> void:
 	
 	if _is_panning and event is InputEventMouseMotion:
 		_camera_motion = event.relative
+
+
+func save() -> Dictionary:
+	var save_dict := {
+		"filename": get_scene_file_path(),
+		"parent": get_parent().get_path(),
+		"pos_x": position.x,
+		"pos_y": position.y,
+		"_zoom": _zoom,
+	}
+	
+	return save_dict

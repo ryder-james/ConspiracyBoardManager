@@ -1,0 +1,105 @@
+[gd_scene format=3 uid="uid://begqpr3144cr5"]
+
+[ext_resource type="Script" uid="uid://l1mcwvj8xrk0" path="res://corkboard/sticky_notes/note.gd" id="1_cyt3m"]
+[ext_resource type="Texture2D" uid="uid://qeqj7j2ei8bg" path="res://corkboard/sticky_notes/note_icons/City.png" id="1_oeg03"]
+[ext_resource type="Resource" uid="uid://bruqbaeawk30e" path="res://preferences/data/messy_notes.tres" id="2_bpsue"]
+[ext_resource type="FontFile" uid="uid://dlbudvtnf8npq" path="res://themes/fonts/Fragmentcore.otf" id="2_de6el"]
+[ext_resource type="Script" uid="uid://bttgnk3bb2a8i" path="res://addons/label_font_auto_sizer/auto_size_label.gd" id="3_rg60n"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dythn"]
+bg_color = Color(1, 1, 0.56078434, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_cyt3m"]
+font = ExtResource("2_de6el")
+font_size = 37
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="QuadMesh" id="QuadMesh_cyt3m"]
+size = Vector2(5, 5)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_cyt3m"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bpsue"]
+resource_local_to_scene = true
+transparency = 1
+shading_mode = 0
+albedo_texture = SubResource("ViewportTexture_cyt3m")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_bpsue"]
+size = Vector3(5, 5, 0.1)
+
+[node name="Note" type="Node3D" unique_id=1607266868 groups=["Persist"]]
+process_mode = 3
+script = ExtResource("1_cyt3m")
+_messy_notes_pref = ExtResource("2_bpsue")
+metadata/_edit_use_anchors_ = true
+
+[node name="SubViewport" type="SubViewport" parent="." unique_id=609771836]
+unique_name_in_owner = true
+gui_embed_subwindows = true
+size = Vector2i(300, 300)
+render_target_update_mode = 4
+metadata/_edit_use_anchors_ = true
+
+[node name="Control" type="Control" parent="SubViewport" unique_id=1476245259]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="PanelContainer" type="PanelContainer" parent="SubViewport/Control" unique_id=283595964]
+layout_mode = 0
+offset_right = 300.0
+offset_bottom = 300.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_dythn")
+
+[node name="MarginContainer" type="MarginContainer" parent="SubViewport/Control/PanelContainer" unique_id=1418918001]
+layout_mode = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SubViewport/Control/PanelContainer/MarginContainer" unique_id=1376554261]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="SubViewport/Control/PanelContainer/MarginContainer/VBoxContainer" unique_id=1578384313]
+layout_mode = 2
+texture = ExtResource("1_oeg03")
+expand_mode = 5
+
+[node name="AutoSizeLabel" type="Label" parent="SubViewport/Control/PanelContainer/MarginContainer/VBoxContainer" unique_id=641048249]
+custom_minimum_size = Vector2(0, 38)
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_font_sizes/font_size = 1
+text = "Example"
+label_settings = SubResource("LabelSettings_cyt3m")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+clip_text = true
+script = ExtResource("3_rg60n")
+_max_size = 50
+_min_size = 16
+_current_font_size = 37
+_editor_defaults_set = true
+metadata/_custom_type_script = "uid://bttgnk3bb2a8i"
+
+[node name="ReferenceRect" type="ReferenceRect" parent="SubViewport/Control/PanelContainer/MarginContainer" unique_id=690137259]
+layout_mode = 2
+
+[node name="Visuals" type="MeshInstance3D" parent="." unique_id=1277773183]
+unique_name_in_owner = true
+mesh = SubResource("QuadMesh_cyt3m")
+surface_material_override/0 = SubResource("StandardMaterial3D_bpsue")
+
+[node name="Area3D" type="Area3D" parent="Visuals" unique_id=854738278]
+unique_name_in_owner = true
+collision_layer = 2
+input_capture_on_drag = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Visuals/Area3D" unique_id=1164817470]
+shape = SubResource("BoxShape3D_bpsue")
