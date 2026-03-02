@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://cyjq8eqhn8the"]
+
+[ext_resource type="Texture2D" uid="uid://qeqj7j2ei8bg" path="res://corkboard/sticky_notes/note_icons/City.png" id="1_2e76t"]
+[ext_resource type="FontFile" uid="uid://dlbudvtnf8npq" path="res://themes/fonts/Fragmentcore.otf" id="2_2khjs"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pkhog"]
+albedo_color = Color(1, 1, 0.56078434, 1)
+
+[sub_resource type="QuadMesh" id="QuadMesh_pkhog"]
+material = SubResource("StandardMaterial3D_pkhog")
+size = Vector2(5, 5)
+
+[node name="StickyNote" type="Node3D" unique_id=1555134842]
+
+[node name="Quad" type="MeshInstance3D" parent="." unique_id=1546251254]
+mesh = SubResource("QuadMesh_pkhog")
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=458423994]
+transform = Transform3D(1.9526836, 0, 0, 0, 1.9526836, 0, 0, 0, 1, 0, 0.49781317, 0.01)
+texture = ExtResource("1_2e76t")
+
+[node name="Label3D" type="Label3D" parent="." unique_id=348314965]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.9391165, 0.01)
+modulate = Color(0, 0, 0, 1)
+text = "Text"
+font = ExtResource("2_2khjs")
+font_size = 100
+outline_size = 0
+autowrap_mode = 3
+width = 1000.0

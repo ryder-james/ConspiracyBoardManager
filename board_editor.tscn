@@ -1,10 +1,11 @@
 [gd_scene format=3 uid="uid://b57vwsysnv160"]
 
-[ext_resource type="PackedScene" uid="uid://b7tlwtl0whwxa" path="res://corkboard/corkboard.tscn" id="1_05d80"]
+[ext_resource type="PackedScene" uid="uid://b7tlwtl0whwxa" path="res://corkboard/corkboard_bg.tscn" id="1_05d80"]
 [ext_resource type="Script" uid="uid://baphib3msylmd" path="res://ui/pan_camera.gd" id="2_05d80"]
 [ext_resource type="Resource" uid="uid://ktruji2j4oh6" path="res://preferences/data/pan_speed.tres" id="3_281qn"]
 [ext_resource type="PackedScene" uid="uid://dtybedmm2apqq" path="res://ui/menu.tscn" id="3_kvqg4"]
 [ext_resource type="Resource" uid="uid://b37ga2hs84pes" path="res://preferences/data/zoom_speed.tres" id="4_xsqpg"]
+[ext_resource type="PackedScene" uid="uid://cyjq8eqhn8the" path="res://corkboard/sticky_notes/sticky_note.tscn" id="5_xsqpg"]
 
 [sub_resource type="Environment" id="Environment_05d80"]
 background_mode = 1
@@ -13,7 +14,8 @@ ambient_light_source = 1
 
 [node name="Node3D" type="Node3D" unique_id=51308579]
 
-[node name="Corkboard" parent="." unique_id=621280219 node_paths=PackedStringArray("anchor") instance=ExtResource("1_05d80")]
+[node name="CorkboardBG" parent="." unique_id=621280219 node_paths=PackedStringArray("anchor") instance=ExtResource("1_05d80")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.01)
 anchor = NodePath("../CameraAnchor")
 
 [node name="CameraAnchor" type="Node3D" parent="." unique_id=681827004]
@@ -22,14 +24,18 @@ _pan_speed_pref = ExtResource("3_281qn")
 _zoom_speed_pref = ExtResource("4_xsqpg")
 
 [node name="Camera3D" type="Camera3D" parent="CameraAnchor" unique_id=2017705499]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 15)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
 environment = SubResource("Environment_05d80")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=481545579]
+[node name="Notes" type="Node3D" parent="." unique_id=2045866552]
 
-[node name="Menu" parent="CanvasLayer" unique_id=1414489040 instance=ExtResource("3_kvqg4")]
+[node name="Note" parent="Notes" unique_id=1555134842 instance=ExtResource("5_xsqpg")]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1641776052]
 transform = Transform3D(-0.4572939, 0.6109379, -0.64624876, -0.834591, -0.043839604, 0.54912287, 0.30714884, 0.79046386, 0.52993095, -77.284996, 65.66969, 80.13413)
 light_energy = 1.7
 shadow_enabled = true
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=481545579]
+
+[node name="Menu" parent="UI" unique_id=1414489040 instance=ExtResource("3_kvqg4")]
