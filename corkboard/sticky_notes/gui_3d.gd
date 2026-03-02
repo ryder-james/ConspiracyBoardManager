@@ -11,23 +11,12 @@ var _last_event_time: float = -1.0
 
 @onready var _node_viewport: SubViewport = %SubViewport
 @onready var _node_quad: MeshInstance3D = %Visuals
-@onready var _node_area: Area3D = %Visuals/Area3D
+@onready var _node_area: Area3D = %Area3D
 
 func _ready() -> void:
 	_node_area.mouse_entered.connect(_mouse_entered_area)
 	_node_area.mouse_exited.connect(_mouse_exited_area)
 	_node_area.input_event.connect(_mouse_input_event)
-
-	# If the material is NOT set to use billboard settings, then avoid running 
-	# billboard specific code
-	if (_node_quad.get_surface_override_material(0).billboard_mode 
-			== BaseMaterial3D.BillboardMode.BILLBOARD_DISABLED):
-		set_process(false)
-
-
-func _process(_delta: float) -> void:
-	# NOTE: Remove this function if you don't plan on using billboard settings.
-	rotate_area_to_billboard()
 
 
 func _mouse_entered_area() -> void:
