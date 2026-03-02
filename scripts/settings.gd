@@ -9,10 +9,15 @@ const SECTION_PREFS := &"Preferences"
 
 
 var _config := ConfigFile.new()
+var _cached_settings: Dictionary[String, Variant] = {}
 
 
 func _ready() -> void:
 	_config.load(SETTINGS_FILE_PATH)
+
+
+func save() -> void:
+	_config.save(SETTINGS_FILE_PATH)
 
 
 #region Preference Shortcuts
@@ -50,10 +55,21 @@ func _set_preference(pref: Preference, value: Variant,
 
 func _set_value(section: StringName, key: StringName, 
 		value: Variant, save_immediate: bool) -> void:
+	# Update config in memory
 	_config.set_value(section, key, value)
+	
+	# Update cache
+	var qual_key := "%s.%s" % [section, key]
+	_cached_settings[qual_key] = value
+	
+	# Apply to file if requested
 	if save_immediate:
-		_config.save(SETTINGS_FILE_PATH)
+		save()
 
 
 func _get_value(section: StringName, key: StringName, default: Variant) -> Variant:
+	var qual_key := "%s.%s" % [section, key]
+	if _cached_settings.has(qual_key):
+		return _cached_settings[qual_key]
+	_cached_settings[qual_key] = _config.get_value(section, key, default)
 	return _config.get_value(section, key, default)
