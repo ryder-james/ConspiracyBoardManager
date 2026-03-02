@@ -1,7 +1,9 @@
 [gd_scene format=3 uid="uid://cyjq8eqhn8the"]
 
 [ext_resource type="Texture2D" uid="uid://qeqj7j2ei8bg" path="res://corkboard/sticky_notes/note_icons/City.png" id="1_2e76t"]
+[ext_resource type="Script" uid="uid://l1mcwvj8xrk0" path="res://corkboard/sticky_notes/sticky_note.gd" id="1_mf06x"]
 [ext_resource type="FontFile" uid="uid://dlbudvtnf8npq" path="res://themes/fonts/Fragmentcore.otf" id="2_2khjs"]
+[ext_resource type="Resource" uid="uid://bruqbaeawk30e" path="res://preferences/data/messy_notes.tres" id="2_3viua"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pkhog"]
 albedo_color = Color(1, 1, 0.56078434, 1)
@@ -11,15 +13,21 @@ material = SubResource("StandardMaterial3D_pkhog")
 size = Vector2(5, 5)
 
 [node name="StickyNote" type="Node3D" unique_id=1555134842]
+script = ExtResource("1_mf06x")
+_messy_notes_pref = ExtResource("2_3viua")
+_messy_rotation_range = Vector2(-3, 3)
 
-[node name="Quad" type="MeshInstance3D" parent="." unique_id=1546251254]
+[node name="Visuals" type="Node3D" parent="." unique_id=1442941227]
+unique_name_in_owner = true
+
+[node name="Note" type="MeshInstance3D" parent="Visuals" unique_id=1546251254]
 mesh = SubResource("QuadMesh_pkhog")
 
-[node name="Sprite3D" type="Sprite3D" parent="." unique_id=458423994]
+[node name="Sprite3D" type="Sprite3D" parent="Visuals" unique_id=458423994]
 transform = Transform3D(1.9526836, 0, 0, 0, 1.9526836, 0, 0, 0, 1, 0, 0.49781317, 0.01)
 texture = ExtResource("1_2e76t")
 
-[node name="Label3D" type="Label3D" parent="." unique_id=348314965]
+[node name="Label3D" type="Label3D" parent="Visuals" unique_id=348314965]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.9391165, 0.01)
 modulate = Color(0, 0, 0, 1)
 text = "Text"

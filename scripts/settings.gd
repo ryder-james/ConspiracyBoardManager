@@ -1,6 +1,9 @@
 extends Node
 
 
+signal pref_changed(pref: Preference)
+
+
 const SETTINGS_FILE_PATH: String = "user://settings.cfg"
 const SECTION_PREFS := &"Preferences"
 
@@ -14,11 +17,11 @@ func _ready() -> void:
 
 #region Preference Shortcuts
 func set_preff(pref: FloatPref, value: float, save_immediate := true) -> void:
-	_set_value(SECTION_PREFS, pref.key, value, save_immediate)
+	_set_preference(pref, value, save_immediate)
 
 
 func set_prefb(pref: BoolPref, value: bool, save_immediate := true) -> void:
-	_set_value(SECTION_PREFS, pref.key, value, save_immediate)
+	_set_preference(pref, value, save_immediate)
 
 
 func get_preff(pref: FloatPref) -> float:
@@ -37,6 +40,12 @@ func setf(section: StringName, key: StringName,
 
 func getf(section: StringName, key: StringName, default := 0.0) -> float:
 	return _get_value(section, key, default)
+
+
+func _set_preference(pref: Preference, value: Variant, 
+		save_immediate: bool) -> void:
+	_set_value(SECTION_PREFS, pref.key, value, save_immediate)
+	pref_changed.emit(pref)
 
 
 func _set_value(section: StringName, key: StringName, 
