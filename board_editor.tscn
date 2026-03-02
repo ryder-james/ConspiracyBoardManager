@@ -221,5 +221,5 @@ panel_offset = Vector2i(-2, 2)
 script = ExtResource("2_05d80")
 
 [node name="Camera3D" type="Camera3D" parent="CameraAnchor" unique_id=2017705499]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 13.696684)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 15)
 environment = SubResource("Environment_05d80")
