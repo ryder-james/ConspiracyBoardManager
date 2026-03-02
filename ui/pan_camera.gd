@@ -58,7 +58,7 @@ func save() -> Dictionary:
 		"parent": get_parent().get_path(),
 		"pos_x": position.x,
 		"pos_y": position.y,
-		"zoom": _zoom,
+		"_zoom": _zoom,
 	}
 	
 	return save_dict

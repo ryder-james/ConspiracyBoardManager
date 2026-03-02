@@ -21,7 +21,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.01)
 
 [node name="PanCamera" parent="." unique_id=1732930500 instance=ExtResource("2_281qn")]
 
-[node name="Notes3D" type="Node3D" parent="." unique_id=2045866552]
+[node name="Notes3D" type="Node3D" parent="." unique_id=2045866552 groups=["NoteParent"]]
 
 [node name="Note" parent="Notes3D" unique_id=1607266868 instance=ExtResource("5_xsqpg")]
 

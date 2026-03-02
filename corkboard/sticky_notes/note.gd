@@ -34,7 +34,7 @@ func _mouse_input_event(camera: Camera3D, event: InputEvent,
 		if event.is_action_pressed("select"):
 			_is_holding = true
 			_start_pos = global_position
-			_start_mouse_pos = Utility.screen_point_to_ray(true, 4)
+			_start_mouse_pos = Utility.mouse_cast(true, Global.CORKBOARD_MASK)
 			_move_delta = Vector3.ZERO
 		elif event.is_action_released("select"):
 			_is_holding = false
@@ -43,7 +43,7 @@ func _mouse_input_event(camera: Camera3D, event: InputEvent,
 			_is_dragging = false
 	elif event is InputEventMouseMotion and _is_holding:
 		_is_dragging = true
-		var current_pos := Utility.screen_point_to_ray(true, 4)
+		var current_pos := Utility.mouse_cast(true, Global.CORKBOARD_MASK)
 		_move_delta = current_pos - _start_mouse_pos
 		_move_delta.z = 0
 #endregion

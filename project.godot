@@ -20,6 +20,7 @@ config/icon="res://icon.svg"
 Settings="*uid://bmno8054u1k22"
 Utility="*uid://j86vcm1dp2bh"
 Serializer="*uid://d0ebkf8jdimx5"
+Global="*uid://bljp24iwmun68"
 
 [debug]
 
