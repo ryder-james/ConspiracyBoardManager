@@ -15,6 +15,10 @@ run/main_scene="res://board_editor.tscn"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[autoload]
+
+Settings="*uid://bmno8054u1k22"
+
 [debug]
 
 gdscript/warnings/untyped_declaration=1

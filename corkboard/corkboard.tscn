@@ -1,0 +1,209 @@
+[gd_scene format=3 uid="uid://b7tlwtl0whwxa"]
+
+[ext_resource type="Script" uid="uid://5w15aeklwif6" path="res://corkboard/corkboard.gd" id="1_c8hro"]
+[ext_resource type="Texture2D" uid="uid://cn2mpwjq65eby" path="res://corkboard/corkboard-texture.png" id="2_n7e5q"]
+[ext_resource type="Script" uid="uid://bpqc3durhqkn4" path="res://corkboard/corkboard_panel.gd" id="3_r6t67"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_05d80"]
+albedo_texture = ExtResource("2_n7e5q")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kvqg4"]
+albedo_texture = ExtResource("2_n7e5q")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fdvga"]
+albedo_texture = ExtResource("2_n7e5q")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_281qn"]
+albedo_texture = ExtResource("2_n7e5q")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xsqpg"]
+albedo_texture = ExtResource("2_n7e5q")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u6wx3"]
+albedo_texture = ExtResource("2_n7e5q")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g68le"]
+albedo_texture = ExtResource("2_n7e5q")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_usdou"]
+albedo_texture = ExtResource("2_n7e5q")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ks41l"]
+albedo_texture = ExtResource("2_n7e5q")
+
+[node name="Corkboard" type="Node3D" unique_id=621280219 node_paths=PackedStringArray("anchor")]
+script = ExtResource("1_c8hro")
+anchor = NodePath("")
+
+[node name="Board1" type="Sprite3D" parent="." unique_id=52900363]
+material_override = SubResource("StandardMaterial3D_05d80")
+texture = ExtResource("2_n7e5q")
+script = ExtResource("3_r6t67")
+
+[node name="Board2" type="Sprite3D" parent="." unique_id=1730062793]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 20, 0)
+material_override = SubResource("StandardMaterial3D_kvqg4")
+texture = ExtResource("2_n7e5q")
+script = ExtResource("3_r6t67")
+panel_offset = Vector2i(0, 1)
+
+[node name="Board3" type="Sprite3D" parent="." unique_id=288712325]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 20, 0)
+material_override = SubResource("StandardMaterial3D_fdvga")
+texture = ExtResource("2_n7e5q")
+script = ExtResource("3_r6t67")
+panel_offset = Vector2i(1, 1)
+
+[node name="Board4" type="Sprite3D" parent="." unique_id=1976358082]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 0)
+material_override = SubResource("StandardMaterial3D_281qn")
+texture = ExtResource("2_n7e5q")
+script = ExtResource("3_r6t67")
+panel_offset = Vector2i(1, 0)
+
+[node name="Board5" type="Sprite3D" parent="." unique_id=474201610]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, -20, 0)
+material_override = SubResource("StandardMaterial3D_xsqpg")
+texture = ExtResource("2_n7e5q")
+script = ExtResource("3_r6t67")
+panel_offset = Vector2i(1, -1)
+
+[node name="Board6" type="Sprite3D" parent="." unique_id=1589108302]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -20, 0)
+material_override = SubResource("StandardMaterial3D_u6wx3")
+texture = ExtResource("2_n7e5q")
+script = ExtResource("3_r6t67")
+panel_offset = Vector2i(0, -1)
+
+[node name="Board7" type="Sprite3D" parent="." unique_id=119238371]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, -20, 0)
+material_override = SubResource("StandardMaterial3D_g68le")
+texture = ExtResource("2_n7e5q")
+script = ExtResource("3_r6t67")
+panel_offset = Vector2i(-1, -1)
+
+[node name="Board8" type="Sprite3D" parent="." unique_id=1394195990]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, 0)
+material_override = SubResource("StandardMaterial3D_usdou")
+texture = ExtResource("2_n7e5q")
+script = ExtResource("3_r6t67")
+panel_offset = Vector2i(-1, 0)
+
+[node name="Board9" type="Sprite3D" parent="." unique_id=242652488]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 20, 0)
+material_override = SubResource("StandardMaterial3D_ks41l")
+texture = ExtResource("2_n7e5q")
+script = ExtResource("3_r6t67")
+panel_offset = Vector2i(-1, 1)
+
+[node name="Board10" type="Sprite3D" parent="." unique_id=1125885863]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 40, 0)
+material_override = SubResource("StandardMaterial3D_ks41l")
+texture = ExtResource("2_n7e5q")
+script = ExtResource("3_r6t67")
+panel_offset = Vector2i(-1, 2)
+
+[node name="Board11" type="Sprite3D" parent="." unique_id=1427297985]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 40, 0)
+material_override = SubResource("StandardMaterial3D_ks41l")
+texture = ExtResource("2_n7e5q")
+script = ExtResource("3_r6t67")
+panel_offset = Vector2i(0, 2)
+
+[node name="Board12" type="Sprite3D" parent="." unique_id=404632161]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 40, 0)
+material_override = SubResource("StandardMaterial3D_ks41l")
+texture = ExtResource("2_n7e5q")
+script = ExtResource("3_r6t67")
+panel_offset = Vector2i(1, 2)
+
+[node name="Board13" type="Sprite3D" parent="." unique_id=1813213234]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 40, 0)
+material_override = SubResource("StandardMaterial3D_ks41l")
+texture = ExtResource("2_n7e5q")
+script = ExtResource("3_r6t67")
+panel_offset = Vector2i(2, 2)
+
+[node name="Board14" type="Sprite3D" parent="." unique_id=131063591]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 20, 0)
+material_override = SubResource("StandardMaterial3D_ks41l")
+texture = ExtResource("2_n7e5q")
+script = ExtResource("3_r6t67")
+panel_offset = Vector2i(2, 1)
+
+[node name="Board15" type="Sprite3D" parent="." unique_id=1928040023]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 0, 0)
+material_override = SubResource("StandardMaterial3D_ks41l")
+texture = ExtResource("2_n7e5q")
+script = ExtResource("3_r6t67")
+panel_offset = Vector2i(2, 0)
+
+[node name="Board16" type="Sprite3D" parent="." unique_id=218498345]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, -20, 0)
+material_override = SubResource("StandardMaterial3D_ks41l")
+texture = ExtResource("2_n7e5q")
+script = ExtResource("3_r6t67")
+panel_offset = Vector2i(2, -1)
+
+[node name="Board17" type="Sprite3D" parent="." unique_id=906698638]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, -40, 0)
+material_override = SubResource("StandardMaterial3D_ks41l")
+texture = ExtResource("2_n7e5q")
+script = ExtResource("3_r6t67")
+panel_offset = Vector2i(2, -2)
+
+[node name="Board18" type="Sprite3D" parent="." unique_id=1409082600]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, -40, 0)
+material_override = SubResource("StandardMaterial3D_ks41l")
+texture = ExtResource("2_n7e5q")
+script = ExtResource("3_r6t67")
+panel_offset = Vector2i(1, -2)
+
+[node name="Board19" type="Sprite3D" parent="." unique_id=391374771]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -40, 0)
+material_override = SubResource("StandardMaterial3D_ks41l")
+texture = ExtResource("2_n7e5q")
+script = ExtResource("3_r6t67")
+panel_offset = Vector2i(0, -2)
+
+[node name="Board20" type="Sprite3D" parent="." unique_id=1972057231]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, -40, 0)
+material_override = SubResource("StandardMaterial3D_ks41l")
+texture = ExtResource("2_n7e5q")
+script = ExtResource("3_r6t67")
+panel_offset = Vector2i(-1, -2)
+
+[node name="Board21" type="Sprite3D" parent="." unique_id=1858503309]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40, -40, 0)
+material_override = SubResource("StandardMaterial3D_ks41l")
+texture = ExtResource("2_n7e5q")
+script = ExtResource("3_r6t67")
+panel_offset = Vector2i(-2, -2)
+
+[node name="Board22" type="Sprite3D" parent="." unique_id=1372540138]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40, -20, 0)
+material_override = SubResource("StandardMaterial3D_ks41l")
+texture = ExtResource("2_n7e5q")
+script = ExtResource("3_r6t67")
+panel_offset = Vector2i(-2, -1)
+
+[node name="Board23" type="Sprite3D" parent="." unique_id=1643954557]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40, 0, 0)
+material_override = SubResource("StandardMaterial3D_ks41l")
+texture = ExtResource("2_n7e5q")
+script = ExtResource("3_r6t67")
+panel_offset = Vector2i(-2, 0)
+
+[node name="Board24" type="Sprite3D" parent="." unique_id=702785761]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40, 20, 0)
+material_override = SubResource("StandardMaterial3D_ks41l")
+texture = ExtResource("2_n7e5q")
+script = ExtResource("3_r6t67")
+panel_offset = Vector2i(-2, 1)
+
+[node name="Board25" type="Sprite3D" parent="." unique_id=1740853978]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40, 40, 0)
+material_override = SubResource("StandardMaterial3D_ks41l")
+texture = ExtResource("2_n7e5q")
+script = ExtResource("3_r6t67")
+panel_offset = Vector2i(-2, 2)
