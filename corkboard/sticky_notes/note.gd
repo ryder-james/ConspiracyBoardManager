@@ -1,8 +1,8 @@
-extends Node3D
+extends Gui3D
 
 
 @export var _messy_notes_pref: BoolPref
-@export var _messy_rotation_range := Vector2(-10, 10)
+@export var _messy_rotation_range := Vector2(-3, 3)
 
 @onready var _visuals: Node3D = %Visuals
 
