@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d4jeq6c7h8j5x"
-path="res://.godot/imported/add_note.png-7357756e174d2fb5be5fb2238cb6d366.ctex"
+uid="uid://bsimu1vajijxn"
+path="res://.godot/imported/trashcan.png-068724ac71bb5ea372d18a37b5bfceee.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ui/buttons/add_note.png"
-dest_files=["res://.godot/imported/add_note.png-7357756e174d2fb5be5fb2238cb6d366.ctex"]
+source_file="res://ui/buttons/trashcan.png"
+dest_files=["res://.godot/imported/trashcan.png-068724ac71bb5ea372d18a37b5bfceee.ctex"]
 
 [params]
 

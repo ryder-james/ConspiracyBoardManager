@@ -4,10 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://qeqj7j2ei8bg" path="res://corkboard/sticky_notes/note_icons/City.png" id="1_oeg03"]
 [ext_resource type="Resource" uid="uid://bruqbaeawk30e" path="res://preferences/data/messy_notes.tres" id="2_bpsue"]
 [ext_resource type="FontFile" uid="uid://dlbudvtnf8npq" path="res://themes/fonts/Fragmentcore.otf" id="2_de6el"]
+[ext_resource type="StyleBox" uid="uid://g1jmokbnw64e" path="res://themes/style_box_note.tres" id="3_py6dq"]
 [ext_resource type="Script" uid="uid://bttgnk3bb2a8i" path="res://addons/label_font_auto_sizer/auto_size_label.gd" id="3_rg60n"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dythn"]
-bg_color = Color(1, 1, 0.56078434, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_bpsue"]
 font = ExtResource("2_de6el")
@@ -53,7 +51,7 @@ offset_bottom = 40.0
 layout_mode = 0
 offset_right = 300.0
 offset_bottom = 300.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_dythn")
+theme_override_styles/panel = ExtResource("3_py6dq")
 
 [node name="MarginContainer" type="MarginContainer" parent="SubViewport/Control/PanelContainer" unique_id=1418918001]
 layout_mode = 2
@@ -85,7 +83,6 @@ script = ExtResource("3_rg60n")
 _max_size = 50
 _min_size = 16
 _current_font_size = 37
-_size_just_modified_by_autosizer = true
 _editor_defaults_set = true
 metadata/_custom_type_script = "uid://bttgnk3bb2a8i"
 

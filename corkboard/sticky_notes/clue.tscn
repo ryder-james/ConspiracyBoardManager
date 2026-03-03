@@ -1,0 +1,86 @@
+[gd_scene format=3 uid="uid://po0lcdykfxt3"]
+
+[ext_resource type="FontFile" uid="uid://dlbudvtnf8npq" path="res://themes/fonts/Fragmentcore.otf" id="1_0lufs"]
+[ext_resource type="Script" uid="uid://bh64yjjpqsqm0" path="res://corkboard/sticky_notes/clue.gd" id="1_j034l"]
+[ext_resource type="Texture2D" uid="uid://cwrt2lcu82mc6" path="res://ui/buttons/normal_clue_btn.png" id="3_j034l"]
+[ext_resource type="Texture2D" uid="uid://bsimu1vajijxn" path="res://ui/buttons/trashcan.png" id="5_ks68v"]
+[ext_resource type="Texture2D" uid="uid://cl2qe2wtuek18" path="res://ui/buttons/trashcanOpen.png" id="6_trv8g"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0lufs"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.88, 0.88, 0.88, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+corner_detail = 5
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cgkvf"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_laju0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_j034l"]
+
+[node name="Clue" type="PanelContainer" unique_id=677307324]
+self_modulate = Color(1, 1, 0.56078434, 1)
+offset_right = 504.0
+offset_bottom = 120.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_0lufs")
+script = ExtResource("1_j034l")
+_normal_color = Color(1, 1, 0.56078434, 1)
+_red_clue_color = Color(0.8784314, 0.48235294, 0.3137255, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=599669734]
+layout_mode = 2
+theme_override_constants/margin_left = 6
+theme_override_constants/margin_top = 6
+theme_override_constants/margin_right = 6
+theme_override_constants/margin_bottom = 6
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer" unique_id=342329793]
+layout_mode = 2
+
+[node name="ClueText" type="TextEdit" parent="MarginContainer/HBoxContainer" unique_id=1383721454]
+unique_name_in_owner = true
+process_mode = 3
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/caret_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_0lufs")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxEmpty_cgkvf")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_laju0")
+theme_override_styles/read_only = SubResource("StyleBoxEmpty_j034l")
+context_menu_enabled = false
+emoji_menu_enabled = false
+wrap_mode = 1
+scroll_fit_content_height = true
+caret_blink = true
+caret_multiple = false
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer" unique_id=385058134]
+layout_mode = 2
+
+[node name="ClueTypeToggleBtn" type="TextureButton" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=1371712556]
+unique_name_in_owner = true
+self_modulate = Color(1, 1, 0.56078434, 1)
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+toggle_mode = true
+texture_normal = ExtResource("3_j034l")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="TrashBtn" type="TextureButton" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=421409220]
+unique_name_in_owner = true
+self_modulate = Color(0.15, 0.08400001, 0.018000001, 1)
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+texture_normal = ExtResource("5_ks68v")
+texture_hover = ExtResource("6_trv8g")
+ignore_texture_size = true
+stretch_mode = 4

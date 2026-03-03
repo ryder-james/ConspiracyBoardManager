@@ -1,7 +1,11 @@
 [gd_scene format=3 uid="uid://dl82qg3hyb7ln"]
 
 [ext_resource type="FontFile" uid="uid://dlbudvtnf8npq" path="res://themes/fonts/Fragmentcore.otf" id="1_0i6w5"]
-[ext_resource type="Texture2D" uid="uid://d4jeq6c7h8j5x" path="res://ui/buttons/add_note.png" id="3_ervh5"]
+[ext_resource type="Script" uid="uid://dsqcqtc1h8vtv" path="res://corkboard/sticky_notes/note_editor.gd" id="1_6edcp"]
+[ext_resource type="Texture2D" uid="uid://c50cb0nx7jbx1" path="res://ui/buttons/edit_btn.png" id="1_tdpvp"]
+[ext_resource type="Texture2D" uid="uid://b5ycp8pqgve0k" path="res://ui/buttons/close_btn.png" id="3_6edcp"]
+[ext_resource type="Texture2D" uid="uid://8um5en24k5m2" path="res://ui/buttons/save_btn.png" id="3_ttk1p"]
+[ext_resource type="Texture2D" uid="uid://sv1uqerv8rnn" path="res://ui/buttons/add_btn.png" id="3_vnupl"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ew263"]
 content_margin_left = 0.0
@@ -16,6 +20,8 @@ corner_radius_bottom_left = 3
 corner_detail = 5
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vnupl"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gk4xu"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ew263"]
 
@@ -33,6 +39,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_6edcp")
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=394406521]
 layout_mode = 1
@@ -67,6 +74,9 @@ layout_mode = 2
 [node name="EditBtn" type="TextureButton" parent="MarginContainer/Window/MarginContainer/Content/TitleBar" unique_id=55326247]
 unique_name_in_owner = true
 layout_mode = 2
+toggle_mode = true
+texture_normal = ExtResource("1_tdpvp")
+texture_pressed = ExtResource("3_ttk1p")
 
 [node name="TitleText" type="LineEdit" parent="MarginContainer/Window/MarginContainer/Content/TitleBar" unique_id=850174475]
 unique_name_in_owner = true
@@ -74,15 +84,19 @@ layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_placeholder_color = Color(0.16685262, 0.16685301, 0.16685268, 0.6)
+theme_override_colors/caret_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_0i6w5")
 theme_override_font_sizes/font_size = 80
 theme_override_styles/normal = SubResource("StyleBoxEmpty_vnupl")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_gk4xu")
 placeholder_text = "Title Text"
 alignment = 1
+max_length = 20
 
 [node name="CloseBtn" type="TextureButton" parent="MarginContainer/Window/MarginContainer/Content/TitleBar" unique_id=2001389760]
 unique_name_in_owner = true
 layout_mode = 2
+texture_normal = ExtResource("3_6edcp")
 
 [node name="MainContent" type="HBoxContainer" parent="MarginContainer/Window/MarginContainer/Content" unique_id=572199965]
 layout_mode = 2
@@ -109,7 +123,6 @@ Interdum et malesuada fames ac ante ipsum primis in faucibus. Sed malesuada urna
 
 Duis at tristique lacus. Maecenas sit amet elementum lectus, eu ultrices turpis. Aliquam erat volutpat. Proin lobortis ante ante, et finibus massa convallis vehicula. Sed elementum erat lorem, in mollis magna ultricies a. Sed nec fringilla nisl, sit amet euismod nibh. Vivamus porta non mi tincidunt luctus. Nunc nec finibus nunc, quis tincidunt odio."
 wrap_mode = 1
-scroll_fit_content_width = true
 
 [node name="DescriptionDisplay" type="RichTextLabel" parent="MarginContainer/Window/MarginContainer/Content/MainContent/Container" unique_id=2073039677]
 layout_mode = 2
@@ -160,20 +173,13 @@ layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/separation = 10
 
-[node name="Clue" type="TextEdit" parent="MarginContainer/Window/MarginContainer/Content/MainContent/RightPane/ClueBox/PanelContainer/MarginContainer/HBoxContainer/ClueList" unique_id=977667355]
-process_mode = 3
-layout_mode = 2
-theme_override_font_sizes/font_size = 16
-text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut vulputate, arcu ut dictum viverra, quam leo ultricies turpis, non posuere felis orci at nunc. Vestibulum auctor, neque et posuere porta, magna odio elementum est, ornare lacinia metus augue eget metus. Curabitur semper sagittis eros, ac condimentum elit dapibus vitae."
-context_menu_enabled = false
-emoji_menu_enabled = false
-wrap_mode = 1
-scroll_fit_content_height = true
-
 [node name="AddClueBtn" type="TextureButton" parent="MarginContainer/Window/MarginContainer/Content/MainContent/RightPane/ClueBox/PanelContainer/MarginContainer/HBoxContainer" unique_id=393287134]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
-texture_normal = ExtResource("3_ervh5")
+texture_normal = ExtResource("3_vnupl")
+ignore_texture_size = true
+stretch_mode = 4
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/Window/MarginContainer/Content/MainContent/RightPane" unique_id=1605019699]
 layout_mode = 2
